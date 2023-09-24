@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh
+;     background: #E57373;
+}
+.btn{
+    position: relative;/*относительное позиционирование*/
+    padding: 15px 20px;
+    background: #fff;
+    font-size: 18px;
+    display: inline-block;/*отображать как строчно-блочный элемент*/
+    text-decoration: none;
+    color: #E57373;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 2px;/*расстояние между буквами*/
+    text-transform: uppercase;
+    transition: 0.5s;
+
+ #popup{
+    position: fixed;/*фиксированное позиционирование*/
+    top: -100%;/*прячем окно за пределы видимости*/
+    left: 50%;/*позиция окна слева*/
+    transform: translate(-50%,-50%);
+    z-index: 1000;/*на верхний слой*/
+    background: #fff;
+    width: 450px;
+    padding: 80px 50px 50px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.5s;
+    visibility: hidden;/*скрываем окно*/
+}
+#popup.active{
+    visibility: visible;/*показываем окно*/
+
+    top: 50%;/*окно выдвигается сверху*/
+}
+#popup .content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;/*направление главной оси*/
+}
+#popup .content img{
+    max-width: 80px;
+}
+#popup .content h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 20px 0 10px;
+}
+#popup .content p{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+#popup .content .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#popup .content .inputBox input{
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    outline: none;
+    font-size: 18px;
+}
+#popup .content .inputBox input[type="submit"]{
+    max-width: 150px;
+    background: #E57373;
+    color: #fff;
+    border: none;
+}
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+
+
+/* Фон за формой */ .modal { display: none; /* Модальное окно скрыто по умолчанию */ position: fixed; /* Фикс. Позиция на главной странице */ z-index: 1; /* Отображение на заднем плане */ left: 0; top: 0; width: 100%; /* 100% по ширине */ height: 100%; /* 100% по высоте */ overflow: auto; /* Включить прокрутку, если необходимо */ background-color: rgb(0,0,0);  background-color: rgba(0,0,0,0.4);  } /* Содержание модального окна*/ .modal-content { background-color: #fefefe; margin: 15% auto; /* 15% от верха и центрировано */ padding: 20px; border: 1px solid #888; width: 80%; /* Может быть больше и меньше, зависит от размеров экрана */box-shadow: 5px 10px 5px #666; /*Добавить тень */ } /* Основные свойства кнопки «Закрыть» */ .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }/* Свойства кнопки «Закрыть», когда вы наводите на нее курсор или взаимодействуете с ней */ .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+/* Кнопка, используемая для открытия контактной формы - фиксируется в нижней части страницы */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* Всплывающая форма-скрыта по умолчанию */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Добавить стили для контейнера формы */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Поля ввода полной ширины */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Когда входы получают фокус, сделайте что-нибудь */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Установите стиль для кнопки отправить/войти */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Добавить красный цвет фона для кнопки "Отмена" */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Добавить некоторые эффекты наведения на кнопки */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
